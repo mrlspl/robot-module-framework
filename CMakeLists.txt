@@ -4,18 +4,18 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}-std=c++11")
 
 
-project(robot-module-library)
+project(robot-module-framework)
 file(GLOB SOURCES ./src/HelloWorld.cpp)
 
 
 include_directories(include)
 
-add_library(robot-module-library SHARED ${SOURCES})
+add_library(robot-module-framework SHARED ${SOURCES})
 
-install(TARGETS robot-module-library DESTINATION robot-module-library)
+install(TARGETS robot-module-framework DESTINATION robot-module-framework)
 
 file(GLOB HEADERS ./include/HelloWorld.h)
-install(FILES ${HEADERS} DESTINATION include/robot-module-library)
+install(FILES ${HEADERS} DESTINATION include/robot-module-framework)
 
 find_package(PythonInterp)
 find_package(CxxTest REQUIRED)
