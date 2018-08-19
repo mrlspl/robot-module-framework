@@ -9,7 +9,7 @@ project(robot-module-framework)
 
 include_directories(include)
 
-add_library(robot_module_frameworkSHARED ${SOURCES} include/Node.hpp include/Master.hpp src/Route.hpp)
+add_library(robot_module_frameworkSHARED ${SOURCES} include/Node.hpp include/Master.hpp src/Route.hpp src/Master.cpp)
 
 install(TARGETS robot_module_framework DESTINATION robot-module-framework)
 
