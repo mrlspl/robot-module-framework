@@ -5,16 +5,15 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}-std=c++11")
 
 
 project(robot-module-framework)
-file(GLOB SOURCES ./src/HelloWorld.cpp)
 
 
 include_directories(include)
 
-add_library(robot-module-framework SHARED ${SOURCES})
+add_library(robot_module_frameworkSHARED ${SOURCES} include/Node.hpp include/Master.hpp src/Route.hpp)
 
-install(TARGETS robot-module-framework DESTINATION robot-module-framework)
+install(TARGETS robot_module_framework DESTINATION robot-module-framework)
 
-file(GLOB HEADERS ./include/HelloWorld.h)
+file(GLOB HEADERS ./include/Master.hpp ./include/Node.hpp)
 install(FILES ${HEADERS} DESTINATION include/robot-module-framework)
 
 find_package(PythonInterp)
@@ -24,7 +23,6 @@ if(CXXTEST_FOUND)
 	include_directories(${CXXTEST_INCLUDE_DIR})
 	enable_testing()
 	CXXTEST_ADD_TEST(testrunner unit-test/main.cpp
-			${CMAKE_SOURCE_DIR}/src/HelloWorld.cpp
                         ${CMAKE_CURRENT_SOURCE_DIR}/unit-test/HelloWorldTestSuite.h)
 endif()
 
