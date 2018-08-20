@@ -1,0 +1,11 @@
+PROJECT_NAME           = ""
+PROJECT_NUMBER         = ..
+STRIP_FROM_PATH        = /home/mohammad/workspace/robot-module-framework \
+                         /home/mohammad/workspace/robot-module-framework/build
+INPUT                  =  \
+                         /home/mohammad/workspace/robot-module-framework \
+                         /home/mohammad/workspace/robot-module-framework/build
+FILE_PATTERNS          = *.hpp \
+                         *.cpp
+RECURSIVE              = YES
+USE_MDFILE_AS_MAINPAGE = 
